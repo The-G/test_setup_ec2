@@ -26,7 +26,7 @@ test:
 production:
     adapter: mysql2
     encoding: utf8
-    database: tesst_setup_ec2
+    database: test_setup_ec2
     pool: 5
     username: root
     password: 123123
