@@ -26,8 +26,8 @@ test:
 production:
     adapter: mysql2
     encoding: utf8
-    database: facebook_test
+    database: tesst_setup_ec2
     pool: 5
     username: root
     password: 123123
-# 이렇게 하면 안되지. figaro 써야지!! 
+# 이렇게 하면 안되지. figaro 써야지!!
