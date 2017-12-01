@@ -20,6 +20,14 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 production:
-  <<: *default
-  database: db/production.sqlite3
+    adapter: mysql2
+    encoding: utf8
+    database: facebook_test
+    pool: 5
+    username: root
+    password: 123123
+# 이렇게 하면 안되지. figaro 써야지!! 
