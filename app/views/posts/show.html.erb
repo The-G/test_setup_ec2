@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<!-- "/posts/#{@post.id}/create_comment" -->
+<%= form_tag create_comment_post_path(@post), method: :get, remote: true do %>
+<!-- @post부분 객체만 넣어줘도 id 긁어간다 -->
+  <%= text_field_tag :content %>
+  <%= submit_tag %>
+<% end %>
+
+<div id="comments">
+  <% @comments.each do |c| %>
+    <div><%= c.content  %></div>
+  <% end %>
+</div>
