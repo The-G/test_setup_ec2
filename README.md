@@ -126,3 +126,6 @@ server {
 ```
 Passenger로 Rails 실행하기
 본인의 ip로 접속해서 확인하기
+
+
+#### default 에서 production으로 하기 위해서는! secret_key 가 필요하다!! 
