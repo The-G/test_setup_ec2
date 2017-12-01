@@ -46,4 +46,4 @@ group :development do
 end
 
 gem 'devise'
-gem 'mysql2' group: :production
+gem 'mysql2', group: :production
