@@ -128,4 +128,28 @@ Passenger로 Rails 실행하기
 본인의 ip로 접속해서 확인하기
 
 
-#### default 에서 production으로 하기 위해서는! secret_key 가 필요하다!! 
+#### default 에서 production으로 하기 위해서는! secret_key 가 필요하다!!
+- /config/secrets.yml 의 secret_key_base 이슈 해결해야함!
+- rake db:migrate RAILS_ENV=production
+- rake assets:precompile
+  assets:precompile이란? javascript, stylesheet 등,, 각각 하나로 묶어서 보냄. 개발자도구 network file로 확인해볼 수 있다.
+
+---
+Database setup
+```
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+```
+`Gemfile`에 mysql2 추가
+```
+gem 'mysql2', group: :production
+```
+`config/database.yml` 내용 추가
+```
+production:
+    adapter: mysql2
+    encoding: utf8
+    database: app_name_production
+    pool: 5
+    username: <%=ENV['DATABASE_USER']%>
+    password: <%=ENV['DATABASE_PASSWORD']%>
+```
