@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 production:
-  <<: *default
-  database: db/production.sqlite3
+    adapter: mysql2
+    encoding: utf8
+    database: app_name_production
+    pool: 5
+    username: <%=ENV['DATABASE_USER']%>
+    password: <%=ENV['DATABASE_PASSWORD']%>
